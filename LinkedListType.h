@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <queue>
+#include <vector>
 
 using namespace std;
 
@@ -40,7 +42,7 @@ public:
 	*	Write your function declarations below this block.
 	*
 	**************************************************************/
-
+	int growQueue(queue<int>&, int*) const;
 
 protected:
     int count;		//variable to store the number of elements in the list

@@ -31,7 +31,7 @@ public:
 	*	Write your function declarations go below this block.
 	*
 	**************************************************************/
-
+	void bfsTraversal(int vertix, vector<int>& bfsSequence) const;
 
 
 private:

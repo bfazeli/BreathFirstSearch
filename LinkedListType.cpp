@@ -49,6 +49,26 @@ LinkedListType::~LinkedListType()
 	destroyList(); 
 }
 
+int LinkedListType::growQueue(queue<int>& bfsQueue, int* visited) const
+{
+	int vertex, count = 0;
+	Node* current = first;
+	while (current != nullptr)
+	{
+		vertex = current->getInfo();
+		if (visited[vertex] == 0)
+		{
+			bfsQueue.push(vertex);
+			visited[vertex] = 1;
+			++count;
+		}
+		current = current->getLink();
+	}
+	
+	return count;
+}
+
+
 
 
 
