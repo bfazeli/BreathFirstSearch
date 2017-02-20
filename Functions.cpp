@@ -8,22 +8,25 @@ void GraphType::bfsTraversal(int vertix, vector<int>& bfsSequence) const
 {
 	if (gSize > 0)
 	{
-		bfsSequence.push_back(vertix);
-		if (gSize > 1)
+		if (gSize == 1) bfsSequence.push_back(vertix);
+		else
 		{
-			int *visited = new int[gSize]();
-			visited[vertix] = 2;
+			bool *visited = new bool[gSize]();
+			visited[vertix] = true;
 			queue<int> bfsQueue;
 			int queueCounter = 0;
+			bfsQueue.push(vertix);
 
 			do
 			{
-				if (queueCounter <= gSize)
-					queueCounter += graph[vertix].growQueue(bfsQueue, visited);
-				
 				vertix = bfsQueue.front();
 
 				bfsQueue.pop();
+
+				if (queueCounter < gSize)
+					queueCounter += graph[vertix].growQueue(bfsQueue, visited);
+				
+				
 				visited[vertix] = 2;
 				bfsSequence.push_back(vertix);
 

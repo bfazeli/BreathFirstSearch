@@ -49,14 +49,14 @@ LinkedListType::~LinkedListType()
 	destroyList(); 
 }
 
-int LinkedListType::growQueue(queue<int>& bfsQueue, int* visited) const
+int LinkedListType::growQueue(queue<int>& bfsQueue, bool* visited) const
 {
 	int vertex, count = 0;
 	Node* current = first;
 	while (current != nullptr)
 	{
 		vertex = current->getInfo();
-		if (visited[vertex] == 0)
+		if (!(visited[vertex]))
 		{
 			bfsQueue.push(vertex);
 			visited[vertex] = 1;

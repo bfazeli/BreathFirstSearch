@@ -42,7 +42,7 @@ public:
 	*	Write your function declarations below this block.
 	*
 	**************************************************************/
-	int growQueue(queue<int>&, int*) const;
+	int growQueue(queue<int>&, bool*) const;
 
 protected:
     int count;		//variable to store the number of elements in the list
